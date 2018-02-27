@@ -1,0 +1,61 @@
+intensity: number of photons collected by pixels
+range: 0-255
+
+resolution of an image is number of rows and columns of the image
+
+image procession is done to enhance the image and information extraction.
+
+
+Steps in image processing:
+1. image acquisition-giving input
+2. preprocessing-convert them into different  colour module
+3. segmentation- covert the background into white and object into black
+4. noise removal- removal of unwanted section
+5. feature extraction-counting the number of match
+
+two toolboxes are: image processing toolbox and computer vision toolbox
+reading image of choice - imread
+
+synatx: imread('path of image\name of the image.ext')
+
+other extension which can be read in matlab:png, ppm, gif and tif
+
+<202x249x3 uint8>
+202 - rows
+249 - columns 
+3 - rgb
+uint 8 - data type
+
+imtool(variable name) - displaying image suing the variables.
+
+r=a(:,:,1)
+
+Preprocessing:
+We covnert the image into colour model and see in which colour model it looks different
+1. RGB
+2. GREYSCALE
+3. YCbCr
+4. HSV
+
+average of red green and blue- greyscale
+
+application -cctv
+
+covert rgb to greyscale : gr=rgb2gray(a)
+
+YCbCr: y is greyscale or intensity,brightness
+Cb- Chroma blue- Difference between brightness and blue
+Cr- Chroma red- Difference between brigtness and red
+
+conver rgb to ycbcr: cr=rgb2ycbcr(a)
+
+hsv- hue saturation and value
+Sturation tells amount of colour
+luminance - brightness of environment
+
+threshold automation- otsu
+
+OTSU ::
+
+step1- histogram
+	graph of bins(intensity between 0.00 - 1.00) vs counts (number of pixels)
