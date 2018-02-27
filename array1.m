@@ -1,0 +1,40 @@
+clc
+clear all
+array = [2,3,4,5;34,45,2,6;6,8,9,0;32,6,77,3]
+n=1
+for(i=1:1:4)
+    for(j=1:1:4)
+        a(n)=array(i,j)
+        n=n+1
+    end
+end
+n=n-1
+for(j=1:1:16)
+    for(i=1:1:15)
+        if(a(i)>a(i+1))
+            temp=a(i)
+            a(i)=a(i+1)
+            a(i+1)=temp
+        end
+    end
+end
+m=1
+pos=1
+count=0
+ele=0
+k=1
+while(k<=78)
+    for(i=1:1:16)
+        if(ele==a(i))
+            count=count+1
+        end
+    end
+    b(m)=count
+    m=m+1
+    count=0
+    ele=ele+1 
+    k=k+1
+end
+bin=[0:1:77]
+figure,plot(bin,b)
+figure,stem(bin,b)
